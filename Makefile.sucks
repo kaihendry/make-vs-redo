@@ -1,0 +1,8 @@
+json/example.json: jsonnet/example.jsonnet vendor
+	jsonnet -J vendor $< > $@
+
+vendor:
+	jb update
+
+clean:
+	rm -f json/example.json
